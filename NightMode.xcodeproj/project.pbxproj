@@ -14,6 +14,8 @@
 		89F155591A94E52A00DB79D8 /* Nimble.framework in Copy Files (2 items) */ = {isa = PBXBuildFile; fileRef = 89F155541A94E4F600DB79D8 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		89F1555A1A94E52F00DB79D8 /* Quick.framework in Copy Files (2 items) */ = {isa = PBXBuildFile; fileRef = 89F155551A94E4F600DB79D8 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		89F1555C1A94E55E00DB79D8 /* NightModeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F1555B1A94E55E00DB79D8 /* NightModeSpec.swift */; };
+		89F1555E1A94E65A00DB79D8 /* UIView+NightMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F1555D1A94E65A00DB79D8 /* UIView+NightMode.swift */; };
+		89F155601A94E7C600DB79D8 /* NightMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F1555F1A94E7C600DB79D8 /* NightMode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		89F155541A94E4F600DB79D8 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		89F155551A94E4F600DB79D8 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = ../Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		89F1555B1A94E55E00DB79D8 /* NightModeSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NightModeSpec.swift; sourceTree = "<group>"; };
+		89F1555D1A94E65A00DB79D8 /* UIView+NightMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+NightMode.swift"; sourceTree = "<group>"; };
+		89F1555F1A94E7C600DB79D8 /* NightMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NightMode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				89F1553D1A94E22F00DB79D8 /* NightMode.h */,
+				89F1555F1A94E7C600DB79D8 /* NightMode.swift */,
+				89F1555D1A94E65A00DB79D8 /* UIView+NightMode.swift */,
 				89F1553B1A94E22F00DB79D8 /* Supporting Files */,
 			);
 			path = NightMode;
@@ -235,6 +241,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89F1555E1A94E65A00DB79D8 /* UIView+NightMode.swift in Sources */,
+				89F155601A94E7C600DB79D8 /* NightMode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +353,7 @@
 		89F1554F1A94E22F00DB79D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -354,12 +363,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		89F155501A94E22F00DB79D8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
